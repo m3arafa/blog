@@ -24,14 +24,16 @@ Route::get('/post', function () {
 });
 
 Route::get('/admin', function () {
-    return view('admin');
+    return view('admin.index');
 });
-Route::get('/admin/posts', function () {
-    return view('admin.posts');
-});
-Route::get('/admin/comments', function () {
-    return view('admin.comments');
-});
-Route::get('/admin/users', function () {
-    return view('admin.users');
-});
+
+
+
+
+Route::resource('admin/users', 'AdminUsersController');
+
+Route::resource('admin/posts', 'AdminPostsController');
+
+Route::resource('admin/comments', 'AdminCommentsController');
+
+Route::resource('admin/replies', 'AdminCommentRepliesController');
