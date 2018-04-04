@@ -1,4 +1,4 @@
-@extends('layouts.app-blog')
+@extends('layouts.app')
 
 @section('content')
     <!-- Post Content Column -->
