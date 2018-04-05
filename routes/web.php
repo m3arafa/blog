@@ -11,23 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+//Route::get('/', function () {
+//    return view('/home');
+//});
+
+Route::get('/', 'PostsController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/post', function () {
-    return view('post');
-});
 
 Route::get('/admin', function () {
     return view('admin.index');
 });
-
-
 
 
 Route::resource('admin/users', 'AdminUsersController');
@@ -37,3 +34,5 @@ Route::resource('admin/posts', 'AdminPostsController');
 Route::resource('admin/comments', 'AdminCommentsController');
 
 Route::resource('admin/replies', 'AdminCommentRepliesController');
+
+Route::resource('/post', 'PostsController');

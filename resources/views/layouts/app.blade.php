@@ -19,6 +19,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/my-style.css') }}" rel="stylesheet">
+    {{--<link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">--}}
+    {{--<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">--}}
+
 </head>
 <body>
 <div id="app">
@@ -79,7 +83,7 @@
         <div class="row">
 
             <!-- Post Content Column -->
-            <div class="col col-md-8">
+            <div class="col col-md-8 page-content">
 
                 @yield('content')
 
