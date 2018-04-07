@@ -13,7 +13,9 @@
 
     <div class="form-group">
         {!! Form::label('category_id','Category:') !!}
-        {!! Form::select('category_id',array(['1'=>'PHP' , '2' => 'Laravel' , '3'=>'JavaScript' ,'4'=>'Bootstrap' ]) ,null , ['class'=>'form-control']) !!}
+        {{--{!! Form::select('category_id',array(['1'=>'PHP' , '2' => 'Laravel' , '3'=>'JavaScript' ,'4'=>'Bootstrap' ]) ,null , ['class'=>'form-control']) !!}--}}
+
+        {!! Form::select('category_id',$categories ,null , ['class'=>'form-control']) !!}
     </div>
 
     <div class="form-group">

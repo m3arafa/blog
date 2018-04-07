@@ -23,6 +23,10 @@
     {{--<link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">--}}
     {{--<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">--}}
 
+    {{--fonts and icons--}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 </head>
 <body>
 <div id="app">
@@ -37,7 +41,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-                    <li><a class="navbar-brand"  href="/">Home</a></li>
+                    <li><a class="navbar-brand" href="/">Home</a></li>
                     <li><a class="navbar-brand " href="#">About</a></li>
                     <li><a class="navbar-brand" href="#">Contact Us</a></li>
 
@@ -59,11 +63,15 @@
                             </a>
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                <a class="dropdown-item" href="user/{{ Auth::user()->id }}">My Profile</a>
+
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
+
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                       style="display: none;">
@@ -83,14 +91,14 @@
         <div class="row">
 
             <!-- Post Content Column -->
-            <div class="col col-md-8 page-content">
+            <div class="col col-md-9 page-content">
 
                 @yield('content')
 
             </div>
 
             <!-- Sidebar Widgets Column -->
-            <div class="col col-md-4">
+            <div class="col col-md-3">
 
                 <!-- Search Widget -->
                 <div class="card my-4">

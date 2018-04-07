@@ -11,36 +11,37 @@
 
         <!-- Blog Post -->
         @if($posts)
-            @foreach($posts as $post)
-                <?php
-                $path = "/images/posts/" . $post->photo->path;
-                ?>
-                <div class="card mb-4">
-                    {{--<img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">--}}
-                    <img class="card-img-top" src="{{$path}}" alt="Card image cap">
-                    <div class="card-body">
-                        <h2 class="card-title">{{ $post->title }}</h2>
-                        <p class="card-text">{{$post->body}}</p>
-                        <a href="post/{{$post->id}}" class="btn btn-primary">Read More &rarr;</a>
-                    </div>
-                    <div class="card-footer text-muted">
-                        <div class="row">
-                            <div class="col col-md-4">
-                                {{$post->created_at->diffForHumans()}}
-                            </div>
-                            <div class="col col-md-4">
-                                writer : {{$post->user->name}}
-                            </div>
-                            <div class="col col-md-4">
-                                category : {{$post->category->name}}
-                            </div>
+            <div class="row">
+                @foreach($posts as $post)
+                    <?php
+                    $path = "/images/posts/" . $post->photo->path;
+                    ?>
+                    <div class="card mb-4 col-md-5" style="margin:25px">
+                        {{--<img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">--}}
+                        <img class="card-img-top" src="{{$path}}" alt="Card image cap">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ $post->title }}</h2>
+                            <p class="card-text">{{str_limit($post->body, 200)}}</p>
+                            <a href="post/{{$post->id}}" class="btn btn-primary">Read More &rarr;</a>
                         </div>
+                        <div class="card-footer text-muted">
+                            <div class="row">
+                                <div class="col col-md-4">
+                                    {{$post->created_at->diffForHumans()}}
+                                </div>
+                                <div class="col col-md-4">
+                                    writer : <a href="user/{{$post->user->id}}">{{$post->user->name}}</a>
+                                </div>
+                                <div class="col col-md-4">
+                                    category : {{$post->category->name}}
+                                </div>
+                            </div>
 
 
+                        </div>
                     </div>
-                </div>
-        @endforeach
-
+                @endforeach
+            </div>
     @endif
 
 

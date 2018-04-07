@@ -36,3 +36,5 @@ Route::resource('admin/comments', 'AdminCommentsController');
 Route::resource('admin/replies', 'AdminCommentRepliesController');
 
 Route::resource('/post', 'PostsController');
+
+Route::resource('/user','UsersController');
