@@ -12,6 +12,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    {{--<script src="{{ asset('js/jquery.js') }}" defer></script>--}}
+    {{--<script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer></script>--}}
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -64,7 +66,7 @@
 
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                                <a class="dropdown-item" href="user/{{ Auth::user()->id }}">My Profile</a>
+                                <a class="dropdown-item" href="/user/{{ Auth::user()->id }}">My Profile</a>
 
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
@@ -121,26 +123,26 @@
                             <div class="col-lg-6">
                                 <ul class="list-unstyled mb-0">
                                     <li>
-                                        <a href="#">Web Design</a>
+                                        <a href="/category/5">Web Design</a>
                                     </li>
                                     <li>
-                                        <a href="#">HTML</a>
+                                        <a href="/category/1">PHP</a>
                                     </li>
                                     <li>
-                                        <a href="#">Freebies</a>
+                                        <a href="/category/6">Python</a>
                                     </li>
                                 </ul>
                             </div>
                             <div class="col-lg-6">
                                 <ul class="list-unstyled mb-0">
                                     <li>
-                                        <a href="#">JavaScript</a>
+                                        <a href="/category/3">JavaScript</a>
                                     </li>
                                     <li>
-                                        <a href="#">CSS</a>
+                                        <a href="/category/4">Bootstrap</a>
                                     </li>
                                     <li>
-                                        <a href="#">Tutorials</a>
+                                        <a href="/category/2">Laravel</a>
                                     </li>
                                 </ul>
                             </div>

@@ -5,8 +5,11 @@
         {{--<h1 class="my-4">Page Heading--}}
         {{--<small>Secondary Text</small>--}}
         {{--</h1>--}}
-
-        <h2><a href="post/create">Create New Post</a></h2>
+        @if(Auth::user())
+            <h2><a href="post/create">Create New Post</a></h2>
+            @else
+            <h3>please login to create new post</h3>
+        @endif
         <hr>
 
         <!-- Blog Post -->
@@ -30,7 +33,7 @@
                                     {{$post->created_at->diffForHumans()}}
                                 </div>
                                 <div class="col col-md-4">
-                                    writer : <a href="user/{{$post->user->id}}">{{$post->user->name}}</a>
+                                    writer : <a href="/user/{{$post->user_id}}">{{$post->user->name}}</a>
                                 </div>
                                 <div class="col col-md-4">
                                     category : {{$post->category->name}}

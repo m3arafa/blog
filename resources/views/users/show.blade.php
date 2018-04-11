@@ -54,7 +54,7 @@
                             <div class="card-body">
                                 <h2 class="card-title">{{ $post->title }}</h2>
                                 <p class="card-text">{{str_limit($post->body, 200)}}</p>
-                                <a href="post/{{$post->id}}" class="btn btn-primary">Read More &rarr;</a>
+                                <a href="/post/{{$post->id}}" class="btn btn-primary">Read More &rarr;</a>
                             </div>
                             <div class="card-footer text-muted">
                                 <div class="row">
@@ -62,7 +62,7 @@
                                         {{$post->created_at->diffForHumans()}}
                                     </div>
                                     <div class="col col-md-4">
-                                        writer : <a href="user/{{$post->user->id}}">{{$post->user->name}}</a>
+                                        writer : <a href="/user/{{$post->user->id}}">{{$post->user->name}}</a>
                                     </div>
                                     <div class="col col-md-4">
                                         category : {{$post->category->name}}

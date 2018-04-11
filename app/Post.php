@@ -35,9 +35,9 @@ class Post extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function comment()
+    public function comments()
     {
-        $this->hasMany('App/Comment');
+        return $this->hasMany('App\Comment');
     }
 
 }

@@ -6,13 +6,24 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-    public function commentReply()
+    protected $fillable = [
+
+        'post_id', 'user_id', 'body', 'photo'
+    ];
+
+
+    public function replies()
     {
-        return $this->hasMany('App/CommentReply');
+        return $this->hasMany('App\CommentReply');
     }
 
     public function user()
     {
-        return $this->belongsTo('App/User');
+        return $this->belongsTo('App\User');
+    }
+
+    public function post()
+    {
+        return $this->belongsTo('App\Post');
     }
 }
