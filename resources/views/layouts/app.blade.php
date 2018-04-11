@@ -15,6 +15,11 @@
     {{--<script src="{{ asset('js/jquery.js') }}" defer></script>--}}
     {{--<script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer></script>--}}
 
+    {{-- for about page --}}
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
@@ -44,8 +49,8 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                     <li><a class="navbar-brand" href="/">Home</a></li>
-                    <li><a class="navbar-brand " href="#">About</a></li>
-                    <li><a class="navbar-brand" href="#">Contact Us</a></li>
+                    {{--<li><a class="navbar-brand " href="#">About</a></li>--}}
+                    <li><a class="navbar-brand" href="/contact">Contact Us</a></li>
 
                 </ul>
                 <a class="navbar-brand" href="{{ url('/') }}">

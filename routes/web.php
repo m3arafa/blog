@@ -26,6 +26,11 @@ Route::get('/admin', function () {
     return view('admin.index');
 });
 
+Route::get('/contact', function (){
+     return view('contact');
+});
+
+
 
 Route::resource('admin/users', 'AdminUsersController');
 
