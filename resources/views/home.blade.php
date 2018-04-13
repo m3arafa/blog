@@ -25,7 +25,7 @@
                         <div class="card-body">
                             <h2 class="card-title">{{ $post->title }}</h2>
                             <p class="card-text">{{str_limit($post->body, 200)}}</p>
-                            <a href="post/{{$post->id}}" class="btn btn-primary">Read More &rarr;</a>
+                            <a href="post/{{$post->slug}}" class="btn btn-primary">Read More &rarr;</a>
                         </div>
                         <div class="card-footer text-muted">
                             <div class="row">

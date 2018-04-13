@@ -22,23 +22,9 @@ Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/admin', function () {
-    return view('admin.index');
+Route::get('/contact', function () {
+    return view('contact');
 });
-
-Route::get('/contact', function (){
-     return view('contact');
-});
-
-
-
-Route::resource('admin/users', 'AdminUsersController');
-
-Route::resource('admin/posts', 'AdminPostsController');
-
-Route::resource('admin/comments', 'AdminCommentsController');
-
-Route::resource('admin/replies', 'AdminCommentRepliesController');
 
 Route::resource('/post', 'PostsController');
 
@@ -49,3 +35,21 @@ Route::resource('/post/comment', 'CommentsController');
 Route::resource('/post/comment/replies', 'CommentRepliesController');
 
 Route::resource('/category', 'CategoriesController');
+
+
+
+Route::group(['middleware' => 'admin'], function () {
+
+    Route::get('/admin', function () {
+        return view('admin.index');
+    });
+
+    Route::resource('admin/users', 'AdminUsersController');
+
+    Route::resource('admin/posts', 'AdminPostsController');
+
+    Route::resource('admin/comments', 'AdminCommentsController');
+
+    Route::resource('admin/replies', 'AdminCommentRepliesController');
+
+});

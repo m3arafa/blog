@@ -27,7 +27,7 @@
                 <div class="col col-md-4">
                     {{-- Edit Post --}}
                     @if(Auth::user())
-                        @if($post->user->id == Auth::user()->id)
+                        @if($post->user->id == Auth::user()->id | Auth::user()->isAdmin())
                             <a href="{{$post->id}}/edit">
                                 <button class="btn btn-default">Edit Post</button>
                             </a>
@@ -79,7 +79,7 @@
                     </div>
                 @else
                     <div class="card-body">
-                        <h3>Please <a href="/login">login</a> to make a comment and replies</h3>
+                        <h3>Please <a href="/login">login</a> to make a     comment and replies</h3>
                     </div>
 
                 @endif

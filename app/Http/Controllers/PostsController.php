@@ -79,14 +79,12 @@ class PostsController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        $post = Post::find($id);
+
+        $post = Post::whereSlug($slug)->firstOrFail();
 
         $comments = $post->comments;
-
-
-        // $post = Post::where('id', $id)->get();
 
 
         return view('posts.show', compact('post', 'comments'));
@@ -117,8 +115,10 @@ class PostsController extends Controller
     public function update(PostCreateRequest $request, $id)
     {
         $input = $request->all();
+        $post = Post::find($id);
+        $user = $post->user;
 
-        $user = Auth::user();
+        //    $user = Auth::user();
 
         if ($file = $request->file('photo_id')) {
 
